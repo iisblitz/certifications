@@ -9,11 +9,12 @@ import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
+  <Router basename="/certifications">
   <NavBar/>
   <Routes>
     <Route exact path="/" element={<App/>}/>
     <Route path="/Front1" element={<Front1/>}/>
+
   </Routes>
   </Router>
 );
