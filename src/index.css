@@ -2,10 +2,49 @@
   background-color: f1f1f1;
 }
 
-.box {
-  background-color: fff;
+/* elements for homepage */
+section {
+  width: 100vw;
   display: flex;
-  flex-direction: row;
-  width: 25vw;
-  margin: 3rem 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Cards {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.Cards h1 {
+  margin: 0 auto;
+}
+.Cards h4 {
+  margin: 0 auto;
+}
+.ImageEx p {
+  height: 25vh;
+  margin: auto;
+}
+.ImageEx {
+  height: 25vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Footers for the document*/
+.Footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+.Footer p {
+  margin-bottom: 0;
+  background: rgba(0, 0, 200, 0.8);
+  border: 1px solid black;
+  color: white;
 }

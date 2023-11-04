@@ -4,7 +4,9 @@ import App from './App';
 //import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import NavBar from "./components/NavBar";
-import Front1 from "./pages/Front1"
+import Front from "./pages/Front"
+import FrontEnd from "./pages/FrontEnd";
+import Footer from "./components/Footer";
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,9 +15,11 @@ root.render(
   <NavBar/>
   <Routes>
     <Route exact path="/" element={<App/>}/>
-    <Route path="/Front1" element={<Front1/>}/>
-
+    <Route path="/FrontEnd" element={<FrontEnd/>}/>
+    <Route path='/FrontEnd/:name' element={<Front/>}></Route>
+    
   </Routes>
+  <Footer/>
   </Router>
 );
 
