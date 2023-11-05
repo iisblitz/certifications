@@ -1,0 +1,10 @@
+.quote-box {
+  display: flex;
+  flex-direction: column;
+  margin: 10rem auto;
+  background: rgba(0, 0, 200, 0.8);
+  width: 55vw;
+  height: 30vh;
+  border: 1px solid black;
+  color: white;
+}

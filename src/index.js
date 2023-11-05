@@ -8,6 +8,7 @@ import Front from "./pages/Front"
 import FrontEnd from "./pages/FrontEnd";
 import Footer from "./components/Footer";
 import './index.css';
+import RandomQuote from "./pages/RandomQuote"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
     <Route exact path="/" element={<App/>}/>
     <Route path="/FrontEnd" element={<FrontEnd/>}/>
     <Route path='/FrontEnd/:name' element={<Front/>}></Route>
+    <Route path='/FrontEnd/RandomQuote' element={<RandomQuote/>}></Route>
     
   </Routes>
   <Footer/>

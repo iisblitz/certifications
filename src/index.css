@@ -36,15 +36,18 @@ section {
 
 /*Footers for the document*/
 .Footer {
-  position: fixed;
+  position: absolute;
   text-align: center;
   bottom: 0;
   width: 100%;
   margin-bottom: 0;
+  background: rgba(0, 0, 200, 0.8);
+  border: 1px solid black;
+  margin: 0;
+  align-self: center;
 }
 .Footer p {
   margin-bottom: 0;
-  background: rgba(0, 0, 200, 0.8);
-  border: 1px solid black;
   color: white;
+  margin: 0 auto;
 }
