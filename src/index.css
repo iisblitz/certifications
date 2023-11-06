@@ -41,8 +41,7 @@ section {
   bottom: 0;
   width: 100%;
   margin-bottom: 0;
-  background: rgba(0, 0, 200, 0.8);
-  border: 1px solid black;
+  background: #1976d2;
   margin: 0;
   align-self: center;
 }

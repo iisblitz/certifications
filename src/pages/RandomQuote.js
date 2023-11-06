@@ -27,27 +27,30 @@ const RandomQuote = () => {
   };
 
   return (
-    <div className="quote-box">
+    <wrapper className="quote-box" id="quote-box">
       {res.length > 0 ? (
-        <>
-          <div className="text">{res[quoteIndex]?.quote}</div>
-          <div className="author">{res[quoteIndex]?.author}</div>
-          <button className="new-quote" onClick={handleNewQuote}>
-            New quote
-          </button>
+        <w>
+          <div className="text" id="text">{res[quoteIndex]?.quote}</div>
+          <div className="author" id="author">{`~ "${res[quoteIndex]?.author}"`}</div>
+          
+          <div className="lower">
+          <button className="new-quote" onClick={handleNewQuote}>New quote</button>
           <a
             href={`https://twitter.com/intent/tweet?text=${res[quoteIndex]?.quote} - ${res[quoteIndex]?.author}`}
             id="tweet-quote"
             target="_blank"
             rel="noopener noreferrer"
+            className="twitter"
           >
             Tweet
           </a>
-        </>
+          </div>
+          
+        </w>
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </wrapper>
   );
 };
 
