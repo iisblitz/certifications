@@ -1,0 +1,43 @@
+.playArea {
+  width: 99vw;
+  height: 87vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.drum-machine {
+  background-color: #333;
+  border: 2px solid #444;
+  border-radius: 5px;
+  width: 400px;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.display {
+  background-color: #222;
+  border: 2px solid #444;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.drum-pads {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.drum-pad {
+  background-color: #666;
+  border: 2px solid #444;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.audio {
+  display: none;
+}
