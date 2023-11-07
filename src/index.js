@@ -9,6 +9,7 @@ import FrontEnd from "./pages/FrontEnd";
 import Footer from "./components/Footer";
 import './index.css';
 import RandomQuote from "./pages/RandomQuote"
+import BuildaMarkdownPreviewer from "./pages/BuildaMarkdownPreviewer"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
     <Route path="/FrontEnd" element={<FrontEnd/>}/>
     <Route path='/FrontEnd/:name' element={<Front/>}></Route>
     <Route path='/FrontEnd/RandomQuote' element={<RandomQuote/>}></Route>
+    <Route path='/FrontEnd/BuildaMarkdownPreviewer' element={<BuildaMarkdownPreviewer/>}></Route>
     
   </Routes>
   <Footer/>
