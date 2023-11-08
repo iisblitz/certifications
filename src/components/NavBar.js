@@ -25,7 +25,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display:"flex", justifyContent: "space-between"}}>
           <img src={logo} alt="logo"style={{marginRight:30}}/>

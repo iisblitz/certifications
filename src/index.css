@@ -36,9 +36,10 @@ section {
 
 /*Footers for the document*/
 .Footer {
-  position: absolute;
-  text-align: center;
+  position: fixed;
+  left: 0;
   bottom: 0;
+  text-align: center;
   width: 100%;
   margin-bottom: 0;
   background: #1976d2;
