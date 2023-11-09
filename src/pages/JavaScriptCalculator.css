@@ -1,0 +1,70 @@
+.Calculator {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border: 1px solid black;
+  border-radius: 10%;
+  width: 45vw;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: lightgray;
+}
+
+label {
+  width: 39vw;
+  height: 10vh;
+}
+
+.Display {
+  width: 39vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  border: 1px solid black;
+  background-color: palegreen;
+}
+.Pad {
+  width: 39vw;
+  height: 25vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.number {
+  width: 9.5vw;
+  height: 5vh;
+}
+.operation {
+  width: 9.5vw;
+  height: 5vh;
+  background-color: darkgray;
+}
+.equals {
+  width: 38vw;
+  height: 5vh;
+  background-color: darkred;
+}
+p {
+  width: 90%;
+  text-align: right;
+  font-size: small;
+  color: darkgray;
+}
