@@ -2,24 +2,22 @@ import {useState} from "react"
 import "./JavaScriptCalculator.css"
 
 const JavaScriptCalculator = () => {
-    const [display, setDisplay] = useState('0')
+    const [display, setDisplay] = useState(0)
     const [current, setCurrent] = useState('')
 
     const input = (e) => {
         const pointer = e.target.value;
-        const regex = /[+\-*/.]/;
-      
-        if (regex.test(pointer) && regex.test(current.slice(-1)) ) {
-          setCurrent('Error');
-          setTimeout(() => {
-            setCurrent('');
-          }, 2000);
-        } else {
-          setCurrent((prev) => prev + pointer);
+        const numberRegex = /[0-9]|[.]/;
+        const pointRegex =  /[.]/;
+        let operation
+        
+        if(pointRegex.test(current) && pointRegex.test(pointer)) return console.log("Invalid Input, already a dot in operation")
+        else if(!numberRegex.test(pointer) && !numberRegex.test(current.slice(-1))){
+        operation = current.slice(0, current.length-2) + pointer;
+        console.log(operation)
+        setCurrent(operation)
         }
-
-
-
+        else{setCurrent((prev)=> prev + pointer)}
       };
     
     const reset = () => {
@@ -28,7 +26,7 @@ const JavaScriptCalculator = () => {
     }
 
     const solve = (e) => {
-
+        setDisplay(eval(current))
     }
 
 
@@ -38,7 +36,7 @@ const JavaScriptCalculator = () => {
                 <p>click on the display to delete inputs</p>
                 <div className="Display" onClick={reset} id="clear">
                 <label>{display}</label>
-                <label>{current}</label>
+                <label id="display">{current}</label>
                 </div>
                 <p>Casi - o</p>
                 <div className="Pad">
