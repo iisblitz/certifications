@@ -12,6 +12,7 @@ import RandomQuote from "./pages/RandomQuote"
 import BuildaMarkdownPreviewer from "./pages/BuildaMarkdownPreviewer"
 import DrumMachine from "./pages/DrumMachine"
 import JavaScriptCalculator from './pages/JavaScriptCalculator';
+import Pomodoro from "./pages/Pomodoro"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,7 @@ root.render(
     <Route path='/FrontEnd/BuildaMarkdownPreviewer' element={<BuildaMarkdownPreviewer/>}></Route>
     <Route path='/FrontEnd/DrumMachine' element={<DrumMachine/>}></Route>
     <Route path='/FrontEnd/JavaScriptCalculator' element={<JavaScriptCalculator/>}></Route>
+    <Route path='/FrontEnd/Pomodoro' element={<Pomodoro/>}></Route>
   </Routes>
   <Footer/>
   </Router>
