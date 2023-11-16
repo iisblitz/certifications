@@ -13,7 +13,7 @@ import DataVisualization from './pages/DataVisualization'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import JavaScriptCalculator from './pages/FrontEnd/JavaScriptCalculator';
 import BuildaMarkdownPreviewer from "./pages/FrontEnd/BuildaMarkdownPreviewer"
-
+import DopingInProfessionalBicyleRacing from "./pages/DataVisualization/DopingInProfessionalBicyleRacing"
 
 //import reportWebVitals from './reportWebVitals';
 
@@ -35,6 +35,8 @@ root.render(
     {/*data visualization projects directory */}
     <Route path="/DataVisualization" element={<DataVisualization/>}/>
     <Route path="/DataVisualization/GDP" element={<GDP/>}/>
+    <Route path= "/DataVisualization/DopingInProfessionalBicyleRacing" element={<DopingInProfessionalBicyleRacing/>}/>
+
   </Routes>
   <Footer/>
   </Router>
