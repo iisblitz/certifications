@@ -5,7 +5,7 @@ import  Cards  from "../components/Cards"
 const FrontEnd = () => {
     return ( 
     <div className="Categories">
-    {DB.filter(e=>e.certification === "Frontend Technologies").map(e => <Cards props={e} key={e.id}/>)}
+    {DB.filter(e=>e.certification === "FrontEnd").map(e => <Cards props={e} key={e.id}/>)}
     </div>
 );
 }

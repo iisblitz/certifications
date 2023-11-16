@@ -31,14 +31,15 @@ function ResponsiveAppBar() {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display:"flex", justifyContent: "space-between"}}>
-          <Link to="http://localhost:3000/certifications">
+          <Link to="./">
           <img src={logo} alt="logo"style={{marginRight:30}}/>
           </Link>
+          <Link to="./">
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="./"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -51,6 +52,7 @@ function ResponsiveAppBar() {
           >
             David's projects
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -98,7 +100,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="./"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -114,13 +116,15 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, ml:50, display: { xs: 'none', md: 'flex' }}}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  <Link to={`${page}`}>
+                  {page}
+                  </Link>
+                </Button>
             ))}
           </Box>
         </Toolbar>

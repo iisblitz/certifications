@@ -7,7 +7,7 @@ class Cards extends React.Component{
     render(){
     return(
      
-        <Link to={`/FrontEnd/${this.props.props.name}`} key={this.props.props.id} className="Cards"> 
+        <Link to={`/${this.props.props.certification}/${this.props.props.name}`} key={this.props.props.id} className="Cards"> 
             <Box className="Cards">
                 <Paper elevation = {13} className="Cards">
                     <p className="ImageEx">Image placeholder</p>

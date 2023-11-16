@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import FrontEnd from './pages/FrontEnd'
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import GDP from "./pages/DataVisualization/GDP"
+import Head from "./pages/DataVisualization/Head"
 import Pomodoro from "./pages/FrontEnd/Pomodoro"
 import DrumMachine from "./pages/FrontEnd/DrumMachine"
 import RandomQuote from "./pages/FrontEnd/RandomQuote"
@@ -34,7 +34,7 @@ root.render(
 
     {/*data visualization projects directory */}
     <Route path="/DataVisualization" element={<DataVisualization/>}/>
-    <Route path="/DataVisualization/GDP" element={<GDP/>}/>
+    <Route path="/DataVisualization/Head" element={<Head/>}/>
   </Routes>
   <Footer/>
   </Router>
