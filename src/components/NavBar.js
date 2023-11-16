@@ -10,8 +10,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../resources/DBGA.png'
+import {Link} from "react-router-dom"
 
-const pages = ['FrontEnd', 'Backend', 'Q&A','Databases','Python'];
+const pages = ['FrontEnd', 'Backend', 'Q&A','Databases','Python','DataVisualization'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -24,11 +25,15 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+
+
   return (
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display:"flex", justifyContent: "space-between"}}>
+          <Link to="http://localhost:3000/certifications">
           <img src={logo} alt="logo"style={{marginRight:30}}/>
+          </Link>
           <Typography
             variant="h6"
             noWrap
@@ -76,10 +81,15 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+     
               {pages.map((page) => (
+
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Link to={`${page}`}>
                   <Typography textAlign="center">{page}</Typography>
+                </Link>
                 </MenuItem>
+
               ))}
             </Menu>
           </Box>

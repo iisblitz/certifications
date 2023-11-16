@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import beep from "../resources/beep.mp3"
+import beep from "../../resources/beep.mp3"
 import './Pomodoro.css'
 const Pomodoro = () => {
     const [sessionLength, setSessionLength] = useState(25 * 60);

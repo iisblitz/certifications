@@ -1,6 +1,6 @@
 @font-face {
   font-family: "ACD";
-  src: local("ACD"), url("../fonts/ACD.ttf") format("truetype");
+  src: local("ACD"), url("../../fonts/ACD.ttf") format("truetype");
 }
 .quote-box {
   display: flex;

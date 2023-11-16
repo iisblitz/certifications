@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react'
 import "./DrumMachine.css"
-import Heater_1 from "../resources/Heater-1.mp3"
-import Heater_2 from "../resources/Heater-2.mp3"
-import Heater_3 from "../resources/Heater-3.mp3"
-import Heater_4 from "../resources/Heater-4.mp3"
-import Clap from "../resources/Clap.mp3"
-import Closed_HH from "../resources/Closed-HH.mp3"
-import Kick_n_hat from "../resources/Kick_n_Hat.mp3"
-import Kick from "../resources/Kick.mp3"
-import Open_HH from "../resources/Open-HH.mp3"
+import Heater_1 from "../../resources/Heater-1.mp3"
+import Heater_2 from "../../resources/Heater-2.mp3"
+import Heater_3 from "../../resources/Heater-3.mp3"
+import Heater_4 from "../../resources/Heater-4.mp3"
+import Clap from "../../resources/Clap.mp3"
+import Closed_HH from "../../resources/Closed-HH.mp3"
+import Kick_n_hat from "../../resources/Kick_n_Hat.mp3"
+import Kick from "../../resources/Kick.mp3"
+import Open_HH from "../../resources/Open-HH.mp3"
 
 
 const audioRefs = Array.from({ length: 9 }, () => React.createRef());

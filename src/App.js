@@ -1,13 +1,13 @@
 import React from "react"
-import {DB} from "./database"
-import  Cards  from "./components/Cards"
+import { Link } from "react-router-dom";
 
 
 function App() {
   return (
     <React.Fragment>
       <section>
-        {DB.map(e => <Cards props={e} key={e.id}/>)}
+        <Link to="./FrontEnd">click for frontend projects</Link>
+        <Link to="./DataVisualization">click for data data visualization projects</Link>
       </section>
     </React.Fragment>
   )

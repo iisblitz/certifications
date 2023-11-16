@@ -1,18 +1,21 @@
+import './index.css';
+import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-//import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import FrontEnd from './pages/FrontEnd'
 import NavBar from "./components/NavBar";
-import Front from "./pages/Front"
-import FrontEnd from "./pages/FrontEnd";
 import Footer from "./components/Footer";
-import './index.css';
-import RandomQuote from "./pages/RandomQuote"
-import BuildaMarkdownPreviewer from "./pages/BuildaMarkdownPreviewer"
-import DrumMachine from "./pages/DrumMachine"
-import JavaScriptCalculator from './pages/JavaScriptCalculator';
-import Pomodoro from "./pages/Pomodoro"
+import GDP from "./pages/DataVisualization/GDP"
+import Pomodoro from "./pages/FrontEnd/Pomodoro"
+import DrumMachine from "./pages/FrontEnd/DrumMachine"
+import RandomQuote from "./pages/FrontEnd/RandomQuote"
+import DataVisualization from './pages/DataVisualization'
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import JavaScriptCalculator from './pages/FrontEnd/JavaScriptCalculator';
+import BuildaMarkdownPreviewer from "./pages/FrontEnd/BuildaMarkdownPreviewer"
+
+
+//import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,13 +23,18 @@ root.render(
   <NavBar/>
   <Routes>
     <Route exact path="/" element={<App/>}/>
+    
+    {/*frontend projects directory*/}
     <Route path="/FrontEnd" element={<FrontEnd/>}/>
-    <Route path='/FrontEnd/:name' element={<Front/>}></Route>
     <Route path='/FrontEnd/RandomQuote' element={<RandomQuote/>}></Route>
     <Route path='/FrontEnd/BuildaMarkdownPreviewer' element={<BuildaMarkdownPreviewer/>}></Route>
     <Route path='/FrontEnd/DrumMachine' element={<DrumMachine/>}></Route>
     <Route path='/FrontEnd/JavaScriptCalculator' element={<JavaScriptCalculator/>}></Route>
     <Route path='/FrontEnd/Pomodoro' element={<Pomodoro/>}></Route>
+
+    {/*data visualization projects directory */}
+    <Route path="/DataVisualization" element={<DataVisualization/>}/>
+    <Route path="/DataVisualization/GDP" element={<GDP/>}/>
   </Routes>
   <Footer/>
   </Router>
