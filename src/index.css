@@ -59,3 +59,8 @@ section {
   overflow-y: scroll;
   margin-top: 11vh;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}

@@ -1,66 +1,126 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { scaleLinear, select, axisBottom, axisLeft, max } from 'd3';
+import { scaleLinear, select, axisBottom, axisLeft} from 'd3';
 
 const DopingInProfessionalBicyleRacing = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [dataset, setDataset] = useState(null);
+    const [data, setData] = useState(null)
     const svgRef = useRef();
     const divRef = useRef();
 
     useEffect(() => {
-        fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
+        fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json")
         .then((res) => res.json())
         .then(
             (result) => {
             setIsLoaded(true);
-            setDataset(result.data);
+            setData(result);
+            
+        
             },
             (error) => {
             setIsLoaded(true);
             setError(error);
-            }
-        );
-    }, []);
+            });
+            
+      }
+    , []);
+
+  
 
   useEffect(() => {
-    if (!dataset) return;
+    if (!data) return;
 
     // Set up svg
     const w = 500;
     const h = 300;
+
+    let array = data.map(e => parseFloat(e.Time.split(":").join(".")))
+    let years = data.map(e => e.Year)
+
     const svg = select(svgRef.current)
       .attr('width', w)
       .attr('height', h)
       .style('background', '#d3d3d3')
       .style('overflow', 'visible');
 
+      // Title
+      const titleDiv = select(divRef.current)
+    .append("div")
+    .attr("x", w / 2)
+    .attr("y", 30)
+    .attr("id", "title")  // User Story #1
+    .attr("text-anchor", "middle")
+    .style("font-size", "25px")
+    .text("Doping in Professional Bicycle Racing");
+
+  // sub-title
+  const subtitleDiv = select(divRef.current)
+  .append("div")
+  .attr("x", w / 2)
+  .attr("y", 50)
+  .attr("id", "subtitle")  // User Story #1
+  .attr("text-anchor", "middle")
+  .style("font-size", "15px")
+  .text("35 Fastest times up Alpe d'Huez");
+
+  
     // Set up scaling
     const xScale = scaleLinear()
-      .domain([0, dataset.length - 1])
+    .domain([Math.min(...years), Math.max(...years)])
       .range([0, w]);
 
     const yScale = scaleLinear()
-      .domain([0, max(dataset, (d) => d[1])])
-      .range([h, 0]);
-
+    .domain([Math.min(...array), Math.max(...array)])
+      .range([0,h]);
+     
     // Set up axis
-    const xAxis = axisBottom(xScale).ticks(dataset.length / 20).tickFormat((i) => i + 1);
+    const xAxis = axisBottom(xScale).ticks(data.length/5).tickFormat(d => d.toString())
     const yAxis = axisLeft(yScale).ticks(5);
-
+    
     // Set up data for svg
-    svg.selectAll('rect')
-      .data(dataset)
+    svg.selectAll('circle')
+      .data(data)
       .enter()
-      .append('rect')
-      .attr('x', (d, i) => xScale(i))
-      .attr('y', (d) => yScale(d[1]))
-      .attr('width', w / dataset.length)
-      .attr('height', (d) => h - yScale(d[1]))
-      .attr('fill', 'blue')
-      .attr("class","bar")
-      .attr("data-date", (d) => d[0]) // User Story #6
-      .attr("data-gdp", (d) => d[1]); // User Story #6
+      .append('circle')
+      .attr('cx', (d) => xScale(d.Year))
+      .attr('cy', (d) => yScale(parseFloat(d.Time.split(":").join("."))))
+      .attr("r", 5)
+      .attr("fill", d => (d.Doping) ? "orange" : "blue")
+      .attr("class","dot")
+      .attr("data-x", (d) => d.Time) // User Story #6
+      .attr("data-y", (d) => d.Year) // User Story #6
+      .append("title")
+      .text(d => {
+        const {Time, Place, Seconds, Name, Year, Nationality, Doping, URL} = d
+        return `Time: ${Time}, Place: ${Place}, Seconds: ${Seconds}, Name: ${Name}, Year: ${Year}, Nationality: ${Nationality}, Doping: ${Doping}, url: ${URL}`
+      });
+      
+      svg.append("rect")
+      .attr("x", 250)
+      .attr("y", 10)
+      .attr("width", 20)
+      .attr("height", 20)
+      .attr("fill", "blue");
+    
+    svg.append("text")
+      .attr("x", 280)
+      .attr("y", 25)
+      .text("No doping allegations");
+    
+    // Add the legend for "Riders with doping allegations"
+    svg.append("rect")
+      .attr("x", 250)
+      .attr("y", 35)
+      .attr("width", 20)
+      .attr("height", 20)
+      .attr("fill", "orange");
+    
+    svg.append("text")
+      .attr("x", 280)
+      .attr("y", 50)
+      .text("Riders with doping allegations");
+      
 
     svg.append('g')
       .call(xAxis)
@@ -71,40 +131,18 @@ const DopingInProfessionalBicyleRacing = () => {
     svg.append('g')
       .call(yAxis)
       .attr("id", "y-axis")  // User Story #3
-      .attr("class", "ticks");
+      .attr("class", "ticks")
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .style("text-anchor", "end")
+      .text("Time in minutes");
 
-    // Title
-    svg.append("text")
-      .attr("x", w / 2)
-      .attr("y", 30)
-      .attr("id", "title")  // User Story #1
-      .attr("text-anchor", "middle")
-      .style("font-size", "20px")
-      .text("GDP Bar Chart");
 
-    // Tooltip
-    const tooltip = select("body")
-      .append("div")
-      .attr("id", "tooltip")
-      .style("opacity", 0);
-
-    svg.selectAll('.bar')
-      .on("mouseover", function (event, d) {
-        tooltip.transition()
-          .duration(200)
-          .style("opacity", 0.9);
-        tooltip.html(`${d[0]}<br/>$${d[1].toFixed(2)} Billion`)
-          .attr("data-date", d[0])
-          .style("left", event.pageX + 5 + "px")
-          .style("top", event.pageY - 28 + "px");
-      })
-      .on("mouseout", function (d) {
-        tooltip.transition()
-          .duration(500)
-          .style("opacity", 0);
-      });
-
-  }, [dataset]);
+    // Tooltip     
+      
+  }, [data]);
 
   if (error) {
     return <section><div>Error: {error.message}</div></section>;
@@ -113,8 +151,8 @@ const DopingInProfessionalBicyleRacing = () => {
   } else {
     return (
       <section>
-        <svg ref={svgRef}></svg>
         <div ref={divRef}></div>
+        <svg ref={svgRef}></svg>
       </section>
     );
   }

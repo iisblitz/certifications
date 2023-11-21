@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { scaleLinear, select, axisBottom, axisLeft, max } from 'd3';
+import {select, scaleLinear, max, axisBottom, axisLeft} from 'd3';
 
 const GDP = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [dataset, setDataset] = useState(null);
   const svgRef = useRef();
-  const divRef = useRef();
+
 
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
@@ -27,8 +27,8 @@ const GDP = () => {
     if (!dataset) return;
 
     // Set up svg
-    const w = 500;
-    const h = 300;
+    const w = 600;
+    const h = 400;
     const svg = select(svgRef.current)
       .attr('width', w)
       .attr('height', h)
@@ -114,7 +114,6 @@ const GDP = () => {
     return (
       <section>
         <svg ref={svgRef}></svg>
-        <div ref={divRef}></div>
       </section>
     );
   }
