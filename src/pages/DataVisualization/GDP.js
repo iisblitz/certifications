@@ -60,7 +60,9 @@ const GDP = () => {
       .attr('fill', 'blue')
       .attr("class","bar")
       .attr("data-date", (d) => d[0]) // User Story #6
-      .attr("data-gdp", (d) => d[1]); // User Story #6
+      .attr("data-gdp", (d) => d[1]) // User Story #6
+      .append("title")
+      .text(d => d)
 
     svg.append('g')
       .call(xAxis)
@@ -83,26 +85,6 @@ const GDP = () => {
       .text("GDP Bar Chart");
 
     // Tooltip
-    const tooltip = select("body")
-      .append("div")
-      .attr("id", "tooltip")
-      .style("opacity", 0);
-
-    svg.selectAll('.bar')
-      .on("mouseover", function (event, d) {
-        tooltip.transition()
-          .duration(200)
-          .style("opacity", 0.9);
-        tooltip.html(`${d[0]}<br/>$${d[1].toFixed(2)} Billion`)
-          .attr("data-date", d[0])
-          .style("left", event.pageX + 5 + "px")
-          .style("top", event.pageY - 28 + "px");
-      })
-      .on("mouseout", function (d) {
-        tooltip.transition()
-          .duration(500)
-          .style("opacity", 0);
-      });
 
   }, [dataset]);
 

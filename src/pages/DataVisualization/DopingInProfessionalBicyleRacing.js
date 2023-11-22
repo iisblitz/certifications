@@ -64,7 +64,6 @@ const DopingInProfessionalBicyleRacing = () => {
   .style("font-size", "15px")
   .text("35 Fastest times up Alpe d'Huez");
 
-  
     // Set up scaling
     const xScale = scaleLinear()
     .domain([Math.min(...years), Math.max(...years)])
