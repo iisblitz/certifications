@@ -15,8 +15,6 @@ const DopingInProfessionalBicyleRacing = () => {
             (result) => {
             setIsLoaded(true);
             setData(result);
-            
-        
             },
             (error) => {
             setIsLoaded(true);

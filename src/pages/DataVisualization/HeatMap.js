@@ -1,111 +1,135 @@
-import React, {useEffect, useState, useRef} from "react";
-import {select, scaleLinear, max, axisBottom, axisLeft} from 'd3';
+import React, { useEffect, useState, useRef } from "react";
+import { select, scaleLinear, scaleBand, axisBottom, axisLeft, scaleSequential, interpolateRgb} from 'd3';
 
 const HeatMap = () => {
-    const [data, setData] = useState("Check Data")
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [xdata, setXdata] = useState([])
-    const [ydata, setYdata] = useState([])
-    const svgRef = useRef()
-    const divRef = useRef()
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const svgRef = useRef();
+  const divRef = useRef();
+  const [xdata, setXdata] = useState([]);
+  const [ydata, setYdata] = useState([]);
+  const [data, setData] = useState([]);
+  const [baseT, setBaseT] = useState(0)
 
-    useEffect (()=> {
-        fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json")
-        .then((resp)=> resp.json())
-        .then((result) => {
-            setData(result);
-            setIsLoaded(true);
-            setXdata(data.monthlyVariance.map(e => e.years))
-            setYdata(data.monthlyVariance.map(e => e.months))
-        }, error => {
-            setError(error);
-            setIsLoaded(true);
-        })
-    },[])
+  useEffect(() => {
+    fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json")
+      .then((resp) => resp.json())
+      .then((result) => {
+        setData(result.monthlyVariance);
+        setXdata(result.monthlyVariance.map(e => e.year));
+        setYdata(result.monthlyVariance.map(e => e.month));
+        setBaseT(result.baseTemperature)
+        setIsLoaded(true);
+      }, error => {
+        setError(error);
+        setIsLoaded(true);
+      });
+  }, []);
 
-    useEffect(()=> {
-        if(!data) return;
-        if(error) console.log(error)
+  useEffect(() => {
+    if (error) console.log(error);
 
-        const w = 600;
-        const h = 400;
-        
-        const svg = select(svgRef.current)
-        .attr('width', w)
-        .attr('height', h)
-        .style('background', '#d3d3d3')
-        .style('overflow', "visible")
-        .style("margin","black")
+    const w = 800;
+    const h = 600;
 
-        
-        const titleDiv = select(divRef.current)
-        .append("div")
-        .attr("x", w / 2)
-        .attr("y", 30)
-        .attr("id", "title")  // User Story #1
-        .attr("text-anchor", "middle")
-        .style("font-size", "25px")
-        .text("Monthly Global Land-Surface Temperature");
+    const svg = select(svgRef.current)
+      .attr('width', w)
+      .attr('height', h)
+      .style('overflow', "visible");
 
-        const subTitlediv = select(divRef.current)
-        .append("div")
-        .attr("x", w / 2)
-        .attr("y", 50)
-        .attr("id", "title")  // User Story #1
-        .attr("text-anchor", "middle")
-        .style("font-size", "15px")
-        .text("1753 - 2015: base temperature 8.66℃");
+    const titleDiv = select(divRef.current)
+      .append("div")
+      .attr("x", w / 2)
+      .attr("y", 30)
+      .attr("id", "title")
+      .attr("text-anchor", "middle")
+      .style("font-size", "25px")
+      .text("Monthly Global Land-Surface Temperature");
 
-        // Set up scaling
+    const subTitlediv = select(divRef.current)
+      .append("div")
+      .attr("x", w / 2)
+      .attr("y", 50)
+      .attr("id", "description")
+      .attr("text-anchor", "middle")
+      .style("font-size", "15px")
+      .text("1753 - 2015: base temperature 8.66℃");
+
+    const setX = [...new Set(xdata)];
+    const setY = [...new Set(ydata)];
+
+    // Set up scaling
     const xScale = scaleLinear()
-    .domain([Math.min(...xdata), Math.max(...xdata)])
+      .domain([Math.min(...setX), Math.max(...setX)])
       .range([0, w]);
-      
-    const yScale = scaleLinear()
-    .domain([Math.min(...ydata), Math.max(...ydata)])
-      .range([0,h]);
-     
+
+    const yScale = scaleBand()
+      .domain(setY)
+      .range([0, h])
+      .padding(0.1);
+
     // Set up axis
-    const xAxis = axisBottom(xScale).ticks(data.monthlyVariance)
-    const yAxis = axisLeft(yScale).ticks(data.monthlyVariance)
-    
+    const xAxis = axisBottom(xScale).ticks(setX.length / 15);
+    const yAxis = axisLeft(yScale).tickFormat(d => new Intl.DateTimeFormat('en-US', { month: 'short' }).format(new Date(2000, d - 1, 1)));
+
     svg.append('g')
       .call(xAxis)
       .attr('transform', `translate(0,${h})`)
-      .attr("id", "x-axis")  
-      .attr("class", "ticks");
+      .attr("id", "x-axis")
+      .attr("class", "ticks")
+      .append("title")
+      .text("year");
 
     svg.append('g')
       .call(yAxis)
-      .attr("id", "y-axis")  
+      .attr("id", "y-axis")
       .attr("class", "ticks")
       .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", "0.71em")
       .style("text-anchor", "end")
-      .text("Time in minutes");
+      .append("title")
+      .text("Month");
 
-    svg.append("rect")
-
+    // Color scale
+    const colorScale = scaleSequential()
+    .domain([Math.min(...data.map(d => d.variance)), Math.max(...data.map(d => d.variance))])
+    .interpolator(interpolateRgb("blue","red"));
       
 
-    },[data])
+
+    svg.selectAll('rect')
+      .data(data)
+      .enter()
+      .append('rect')
+      .attr("x", d => xScale(d.year))
+      .attr("y", d => yScale(d.month))
+      .attr("width", w / setX.length)
+      .attr("height", yScale.bandwidth())
+      .attr("fill", d => colorScale(d.variance))
+      .append("title")
+      .attr("data-html", "true")
+      .html(d=> 
+        `year = ${d.year} month = ${d.month}, <br> temperature: ${baseT + d.variance}, <br> variance: ${d.variance}`
+        )
 
 
-    if (error) {
-        return <section><div>Error: {error.message}</div></section>;
-      } else if (!isLoaded) {
-        return <section><div>Loading...</div></section>;
-      } else {
-        return (
-          <section>
-            <div ref={divRef}></div>
-            <svg ref={svgRef}></svg>
-          </section>
-        );
-      }
-    }
+      
+  }, [xdata, ydata, data, error]);
+
+  if (error) {
+    return <section><div>Error: {error.message}</div></section>;
+  } else if (!isLoaded) {
+    return <section><div>Loading...</div></section>;
+  } else {
+    return (
+      <section>
+        <div ref={divRef}></div>
+        <svg ref={svgRef}></svg>
+      </section>
+    );
+  }
+};
 
 export default HeatMap;

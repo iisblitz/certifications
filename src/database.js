@@ -189,7 +189,48 @@ const DB = [{
         'User Story #16: I can mouse over an area and see a tooltip with a corresponding id="tooltip" which displays more information about the area.',
         'User Story #17: My tooltip should have a data-year property that corresponds to the data-year of the active area.'
         ],
-    Status: "Complete"
+    Status: "in progress"
+},{
+    id:4,
+    certification: "DataVisualization",
+    name:"ChoroplethMap",
+    shortDescription: "Objective: Build an app that is functionally similar to this: https://choropleth-map.freecodecamp.rocks.",
+    Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style. /n You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
+    UserStories:[
+        'User Story #1: My choropleth should have a title with a corresponding id="title".',
+        'User Story #2: My choropleth should have a description element with a corresponding id="description".',
+        'User Story #3: My choropleth should have counties with a corresponding class="county" that represent the data.',
+        'User Story #4: There should be at least 4 different fill colors used for the counties.',
+        'User Story #5: My counties should each have data-fips and data-education properties containing their corresponding fips and education values.',
+        'User Story #6: My choropleth should have a county for each provided data point.',
+        'User Story #7: The counties should have data-fips and data-education values that match the sample data.',
+        'User Story #8: My choropleth should have a legend with a corresponding id="legend".',
+        'User Story #9: There should be at least 4 different fill colors used for the legend.',
+        'User Story #10: I can mouse over an area and see a tooltip with a corresponding id="tooltip" which displays more information about the area',
+        'User Story #11: My tooltip should have a data-education property that corresponds to the data-education of the active area.'
+    ],
+    Status: "not started"
+},
+{
+    id:5,
+    certification: "DataVisualization",
+    name:"TreeMap",
+    shortDescription: "Objective: Build an app that is functionally similar to this: https://treemap-diagram.freecodecamp.rocks.",
+    Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style./n You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at https://github.com/d3/d3/blob/master/API.md#axes-d3-axis. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
+    UserStories:[
+        'User Story #1: My tree map should have a title with a corresponding id="title".',
+        'User Story #2: My tree map should have a description with a corresponding id="description".',
+        'User Story #3: My tree map should have rect elements with a corresponding class="tile" that represent the data.',
+        'User Story #4: There should be at least 2 different fill colors used for the tiles.',
+        'User Story #5: Each tile should have the properties data-name, data-category, and data-value containing their corresponding name, category, and value.',
+        'User Story #6: The area of each tile should correspond to the data-value amount: tiles with a larger data-value should have a bigger area.',
+        'User Story #7: My tree map should have a legend with corresponding id="legend".',
+        'User Story #8: My legend should have rect elements with a corresponding class="legend-item".',
+        'User Story #9: The rect elements in the legend should use at least 2 different fill colors.',
+        'User Story #10: I can mouse over an area and see a tooltip with a corresponding id="tooltip" which displays more information about the area.',
+        'User Story #11: My tooltip should have a data-value property that corresponds to the data-value of the active area.'
+    ],
+    Status: "not started"
 }
 ]
 
