@@ -1,7 +1,7 @@
 const Default = () => {
-    return (<>
+    return (<section>
     "Wrong page brah"
-    </>  );
+    </section>  );
 }
  
 export default Default

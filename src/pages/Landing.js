@@ -5,15 +5,21 @@ const Landing = () => {
     return ( 
     <>
     
-    <Link to="./FronEnd" >
+    <Link to="./FronEnd-React" >
     <button className="Cards">
-    go to front end
+    <p className="Id">go to front end</p>
     </button>
     </Link>
     
+    <Link to="./FronEnd-Angular" >
+    <button className="Cards">
+    <p className="Id">go to front end</p>
+    </button>
+    </Link>
+
     <Link to="./DataVisualization" >
     <button className="Cards">
-    go to front end
+    <p className="Id">go to front end</p>
     </button>
     </Link>
 

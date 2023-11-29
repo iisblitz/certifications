@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import logo from '../resources/DBGA.png'
 import {Link} from "react-router-dom"
 
-const pages = ['FrontEnd', 'Backend', 'Q&A','Databases','Python','DataVisualization'];
+const pages = ['FrontEnd-React', 'FrontEnd-Angular', 'Backend', 'Q&A','Databases','Python','DataVisualization'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -31,10 +31,10 @@ function ResponsiveAppBar() {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display:"flex", justifyContent: "space-between"}}>
-          <Link to="./">
+          <Link to="./" className="NavLink">
           <img src={logo} alt="logo"style={{marginRight:30}}/>
           </Link>
-          <Link to="./">
+          <Link to="./"  className="NavLink">
           <Typography
             variant="h6"
             noWrap
@@ -87,7 +87,7 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
 
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Link to={`${page}`}>
+                <Link to={`${page}`}  className="NavLink">
                   <Typography textAlign="center">{page}</Typography>
                 </Link>
                 </MenuItem>
@@ -121,7 +121,7 @@ function ResponsiveAppBar() {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  <Link to={`${page}`}>
+                  <Link to={`${page}`}  className="NavLink">
                   {page}
                   </Link>
                 </Button>
