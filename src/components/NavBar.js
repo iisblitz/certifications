@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import logo from '../resources/DBGA.png'
 import {Link} from "react-router-dom"
 
-const pages = ['FrontEnd-React', 'FrontEnd-Angular', 'Backend', 'Q&A','Databases','Python','DataVisualization'];
+const pages = ['FrontEnd', 'Backend', 'Q&A','Databases','Python','DataVisualization'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

@@ -1,29 +1,13 @@
-import { Link } from "react-router-dom";
+import React from "react"
+import {DB} from "./database"
+import  Cards  from "./components/Cards"
 
 
 const Landing = () => {
     return ( 
-    <>
-    
-    <Link to="./FronEnd-React" >
-    <button className="Cards">
-    <p className="Id">go to front end</p>
-    </button>
-    </Link>
-    
-    <Link to="./FronEnd-Angular" >
-    <button className="Cards">
-    <p className="Id">go to front end</p>
-    </button>
-    </Link>
-
-    <Link to="./DataVisualization" >
-    <button className="Cards">
-    <p className="Id">go to front end</p>
-    </button>
-    </Link>
-
-    </> 
+    <div className="Categories">
+    {DB.filter(e=>e.certification === '').map(e => <Cards props={e} key={e.id}/>)}
+    </div>
 );
 }
  

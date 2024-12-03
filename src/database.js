@@ -1,8 +1,8 @@
 const DB = [{
     id:1,
-    certification: "FrontEnd-React",
+    certification: "FrontEnd",
     name:"RandomQuote",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://random-quote-machine.freecodecamp.rocks/.",
+    shortDescription: "Build an app that is functionally similar to this: https://random-quote-machine.freecodecamp.rocks/.",
     Description: "Fulfill the below user stories and get all of the tests to pass. /n Use whichever libraries or APIs you need. Give it your own personal style.You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. /n Happy coding!",
     UserStories:[
         'User Story #1: I can see a wrapper element with a corresponding id="quote-box".',
@@ -17,13 +17,13 @@ const DB = [{
         'User Story #10: I can tweet the current quote by clicking on the #tweet-quote a element. This a element should include the "twitter.com/intent/tweet" path in its href attribute to tweet the current quote.',
         'User Story #11: The #quote-box wrapper element should be horizontally centered. Please run tests with browsers zoom level at 100% and page maximized.'
         ],
-    Status: "complete"
+    Status: "Complete"
 },
 {
     id:2,
-    certification: "FrontEnd-React",
+    certification: "FrontEnd",
     name:"BuildaMarkdownPreviewer",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://markdown-previewer.freecodecamp.rocks/.",
+    shortDescription: "Build an app that is functionally similar to this: https://markdown-previewer.freecodecamp.rocks/.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style. /n You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
     UserStories:[
         'User Story #1: I can see a textarea element with a corresponding id="editor".',
@@ -34,11 +34,11 @@ const DB = [{
         'User Story #6: When my markdown previewer first loads, the default markdown in the #editor field should be rendered as HTML in the #preview element.',
         'Optional Bonus (you do not need to make this test pass): My markdown previewer interprets carriage returns and renders them as br (line break) elements.'
         ],
-    Status:"complete"
+    Status:"Complete"
 },
 {
     id:3,
-    certification: "FrontEnd-React",
+    certification: "FrontEnd",
     name:"DrumMachine",
     shortDescription: "Build an app that is functionally similar to this: https://drum-machine.freecodecamp.rocks/.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.<br/> You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
@@ -51,13 +51,13 @@ const DB = [{
         'User Story #6: When I press the trigger key associated with each .drum-pad, the audio clip contained in its child audio element should be triggered (e.g. pressing the Q key should trigger the drum pad which contains the string Q, pressing the W key should trigger the drum pad which contains the string W, etc.).',
         'User Story #7: When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).'
         ],
-    Status: "in progress"
+    Status: "Complete"
 },
 {
     id:4,
-    certification: "FrontEnd-React",
+    certification: "FrontEnd",
     name:"JavaScriptCalculator",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://javascript-calculator.freecodecamp.rocks/.",
+    shortDescription: "Build an app that is functionally similar to this: https://javascript-calculator.freecodecamp.rocks/.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style. </br> You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
     UserStories:[
         'User Story #1: My calculator should contain a clickable element containing an = (equal sign) with a corresponding id="equals".',
@@ -80,127 +80,9 @@ const DB = [{
 },
 {
     id:5,
-    certification: "FrontEnd-React",
+    certification: "FrontEnd",
     name:"Pomodoro",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://25--5-clock.freecodecamp.rocks.",
-    Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style./n    You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
-    UserStories:[
-        'User Story #1: I can see an element with id="break-label" that contains a string (e.g. "Break Length").',
-        'User Story #2: I can see an element with id="session-label" that contains a string (e.g. "Session Length").',
-        'User Story #3: I can see two clickable elements with corresponding IDs: id="break-decrement" and id="session-decrement".',
-        'User Story #4: I can see two clickable elements with corresponding IDs: id="break-increment" and id="session-increment".',
-        'User Story #5: I can see an element with a corresponding id="break-length", which by default (on load) displays a value of 5.',
-        'User Story #6: I can see an element with a corresponding id="session-length", which by default displays a value of 25.',
-        'User Story #7: I can see an element with a corresponding id="timer-label", that contains a string indicating a session is initialized (e.g. "Session").',
-        'User Story #8: I can see an element with corresponding id="time-left". NOTE: Paused or running, the value in this field should always be displayed in mm:ss format (i.e. 25:00).',
-        'User Story #9: I can see a clickable element with a corresponding id="start_stop".',
-        'User Story #10: I can see a clickable element with a corresponding id="reset".',
-        'User Story #11: When I click the element with the id of reset, any running timer should be stopped, the value within id="break-length" should return to 5, the value within id="session-length" should return to 25, and the element with id="time-left" should reset to its default state.',
-        'User Story #12: When I click the element with the id of break-decrement, the value within id="break-length" decrements by a value of 1, and I can see the updated value.',
-        'User Story #13: When I click the element with the id of break-increment, the value within id="break-length" increments by a value of 1, and I can see the updated value.',
-        'User Story #14: When I click the element with the id of session-decrement, the value within id="session-length" decrements by a value of 1, and I can see the updated value.',
-        'User Story #15: When I click the element with the id of session-increment, the value within id="session-length" increments by a value of 1, and I can see the updated value.',
-        'User Story #16: I should not be able to set a session or break length to <= 0.',
-        'User Story #17: I should not be able to set a session or break length to > 60.',
-        'User Story #18: When I first click the element with id="start_stop", the timer should begin running from the value currently displayed in id="session-length", even if the value has been incremented or decremented from the original value of 25.',
-        'User Story #19: If the timer is running, the element with the id of time-left should display the remaining time in mm:ss format (decrementing by a value of 1 and updating the display every 1000ms).',
-        'User Story #20: If the timer is running and I click the element with id="start_stop", the countdown should pause.',
-        'User Story #21: If the timer is paused and I click the element with id="start_stop", the countdown should resume running from the point at which it was paused.',
-        'User Story #22: When a session countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of timer-label should display a string indicating a break has begun.',
-        'User Story #23: When a session countdown reaches zero (NOTE: timer MUST reach 00:00), a new break countdown should begin, counting down from the value currently displayed in the id="break-length" element.',
-        'User Story #24: When a break countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of timer-label should display a string indicating a session has begun.',
-        'User Story #25: When a break countdown reaches zero (NOTE: timer MUST reach 00:00), a new session countdown should begin, counting down from the value currently displayed in the id="session-length" element.',
-        'User Story #26: When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 audio tag and have a corresponding id="beep".',
-        'User Story #27: The audio element with id="beep" must be 1 second or longer.',
-        'User Story #28: The audio element with id of beep must stop playing and be rewound to the beginning when the element with the id of reset is clicked.',
-        ],
-    Status: "Complete"
-},
-{
-    id:1,
-    certification: "FrontEnd-Angular",
-    name:"RandomQuote",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://random-quote-machine.freecodecamp.rocks/.",
-    Description: "Fulfill the below user stories and get all of the tests to pass. /n Use whichever libraries or APIs you need. Give it your own personal style.You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. /n Happy coding!",
-    UserStories:[
-        'User Story #1: I can see a wrapper element with a corresponding id="quote-box".',
-        'User Story #2: Within #quote-box, I can see an element with a corresponding id="text".',
-        'User Story #3: Within #quote-box, I can see an element with a corresponding id="author".',
-        'User Story #4: Within #quote-box, I can see a clickable element with a corresponding id="new-quote".',
-        'User Story #5: Within #quote-box, I can see a clickable a element with a corresponding id="tweet-quote".',
-        'User Story #6: On first load, my quote machine displays a random quote in the element with id="text".',
-        'User Story #7: On first load, my quote machine displays the random quotes author in the element with id="author".',
-        'User Story #8: When the #new-quote button is clicked, my quote machine should fetch a new quote and display it in the #text element.',
-        'User Story #9: My quote machine should fetch the new quotes author when the #new-quote button is clicked and display it in the #author element.',
-        'User Story #10: I can tweet the current quote by clicking on the #tweet-quote a element. This a element should include the "twitter.com/intent/tweet" path in its href attribute to tweet the current quote.',
-        'User Story #11: The #quote-box wrapper element should be horizontally centered. Please run tests with browsers zoom level at 100% and page maximized.'
-        ],
-    Status: "complete"
-},
-{
-    id:2,
-    certification: "FrontEnd-Angular",
-    name:"BuildaMarkdownPreviewer",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://markdown-previewer.freecodecamp.rocks/.",
-    Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style. /n You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
-    UserStories:[
-        'User Story #1: I can see a textarea element with a corresponding id="editor".',
-        'User Story #2: I can see an element with a corresponding id="preview".',
-        'User Story #3: When I enter text into the #editor element, the #preview element is updated as I type to display the content of the textarea.',
-        'User Story #4: When I enter GitHub flavored markdown into the #editor element, the text is rendered as HTML in the #preview element as I type (HINT: You dont need to parse Markdown yourself - you can import the Marked library for this: https://cdnjs.com/libraries/marked).',
-        'User Story #5: When my markdown previewer first loads, the default text in the #editor field should contain valid markdown that represents at least one of each of the following elements: a heading element (H1 size), a sub heading element (H2 size), a link, inline code, a code block, a list item, a blockquote, an image, and bolded text.  ',
-        'User Story #6: When my markdown previewer first loads, the default markdown in the #editor field should be rendered as HTML in the #preview element.',
-        'Optional Bonus (you do not need to make this test pass): My markdown previewer interprets carriage returns and renders them as br (line break) elements.'
-        ],
-    Status:"complete"
-},
-{
-    id:3,
-    certification: "FrontEnd-Angular",
-    name:"DrumMachine",
-    shortDescription: "Build an app that is functionally similar to this: https://drum-machine.freecodecamp.rocks/.",
-    Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.<br/> You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
-    UserStories:[
-        'User Story #1: I should be able to see an outer container with a corresponding id="drum-machine" that contains all other elements.',
-        'User Story #2: Within #drum-machine I can see an element with a corresponding id="display".',
-        'User Story #3: Within #drum-machine I can see 9 clickable drum pad elements, each with a class name of drum-pad, a unique id that describes the audio clip the drum pad will be set up to trigger, and an inner text that corresponds to one of the following keys on the keyboard: Q, W, E, A, S, D, Z, X, C. The drum pads MUST be in this order.',
-        'User Story #4: Within each .drum-pad, there should be an HTML5 audio element which has a src attribute pointing to an audio clip, a class name of clip, and an id corresponding to the inner text of its parent .drum-pad (e.g. id="Q", id="W", id="E" etc.).',
-        'User Story #5: When I click on a .drum-pad element, the audio clip contained in its child audio element should be triggered.',
-        'User Story #6: When I press the trigger key associated with each .drum-pad, the audio clip contained in its child audio element should be triggered (e.g. pressing the Q key should trigger the drum pad which contains the string Q, pressing the W key should trigger the drum pad which contains the string W, etc.).',
-        'User Story #7: When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).'
-        ],
-    Status: "in progress"
-},
-{
-    id:4,
-    certification: "FrontEnd-Angular",
-    name:"JavaScriptCalculator",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://javascript-calculator.freecodecamp.rocks/.",
-    Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style. </br> You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
-    UserStories:[
-        'User Story #1: My calculator should contain a clickable element containing an = (equal sign) with a corresponding id="equals".',
-        'User Story #2: My calculator should contain 10 clickable elements containing one number each from 0-9, with the following corresponding IDs: id="zero", id="one", id="two", id="three", id="four", id="five", id="six", id="seven", id="eight", and id="nine".',
-        'User Story #3: My calculator should contain 4 clickable elements each containing one of the 4 primary mathematical operators with the following corresponding IDs: id="add", id="subtract", id="multiply", id="divide".',
-        'User Story #4: My calculator should contain a clickable element containing a . (decimal point) symbol with a corresponding id="decimal".',
-        'User Story #5: My calculator should contain a clickable element with an id="clear".',
-        'User Story #6: My calculator should contain an element to display values with a corresponding id="display".',
-        'User Story #7: At any time, pressing the clear button clears the input and output values, and returns the calculator to its initialized state; 0 should be shown in the element with the id of display.',
-        'User Story #8: As I input numbers, I should be able to see my input in the element with the id of display.',
-        'User Story #9: In any order, I should be able to add, subtract, multiply and divide a chain of numbers of any length, and when I hit =, the correct result should be shown in the element with the id of display.',
-        'User Story #10: When inputting numbers, my calculator should not allow a number to begin with multiple zeros.',
-        'User Story #11: When the decimal element is clicked, a . should append to the currently displayed value; two . in one number should not be accepted.',
-        'User Story #12: I should be able to perform any operation (+, -, *, /) on numbers containing decimal points.',
-        'User Story #13: If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (-) sign). For example, if 5 + * 7 = is entered, the result should be 35 (i.e. 5 * 7); if 5 * - 5 = is entered, the result should be -25 (i.e. 5 * (-5)).',
-        'User Story #14: Pressing an operator immediately following = should start a new calculation that operates on the result of the previous evaluation.',
-        'User Story #15: My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like 2 / 7 with reasonable precision to at least 4 decimal places).'
-        ],
-    Status: "Complete"
-},
-{
-    id:5,
-    certification: "FrontEnd-Angular",
-    name:"Pomodoro",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://25--5-clock.freecodecamp.rocks.",
+    shortDescription: "Build an app that is functionally similar to this: https://25--5-clock.freecodecamp.rocks.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style./n    You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
     UserStories:[
         'User Story #1: I can see an element with id="break-label" that contains a string (e.g. "Break Length").',
@@ -238,7 +120,7 @@ const DB = [{
     id:1,
     certification: "DataVisualization",
     name:"GDP",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://bar-chart.freecodecamp.rocks.",
+    shortDescription: "Build an app that is functionally similar to this: https://bar-chart.freecodecamp.rocks.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style./br    You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at https://github.com/d3/d3/blob/master/API.md#axes-d3-axis. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
     UserStories:[
         'User Story #1: My chart should have a title with a corresponding id="title".',
@@ -261,7 +143,7 @@ const DB = [{
     id:2,
     certification: "DataVisualization",
     name:"DopingInProfessionalBicyleRacing",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://scatterplot-graph.freecodecamp.rocks.",
+    shortDescription: "Build an app that is functionally similar to this: https://scatterplot-graph.freecodecamp.rocks.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style. /n You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at https://github.com/d3/d3/blob/master/API.md#axes-d3-axis. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
     UserStories:[
         'User Story #1: I can see a title element that has a corresponding id="title".',
@@ -286,7 +168,7 @@ const DB = [{
     id:3,
     certification: "DataVisualization",
     name:"HeatMap",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://heat-map.freecodecamp.rocks.",
+    shortDescription: "Build an app that is functionally similar to this: https://heat-map.freecodecamp.rocks.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style. /n You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
     UserStories:[
         'User Story #1: My heat map should have a title with a corresponding id="title".',
@@ -307,12 +189,12 @@ const DB = [{
         'User Story #16: I can mouse over an area and see a tooltip with a corresponding id="tooltip" which displays more information about the area.',
         'User Story #17: My tooltip should have a data-year property that corresponds to the data-year of the active area.'
         ],
-    Status: "complete"
+    Status: "Complete"
 },{
     id:4,
     certification: "DataVisualization",
     name:"ChoroplethMap",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://choropleth-map.freecodecamp.rocks.",
+    shortDescription: "Build an app that is functionally similar to this: https://choropleth-map.freecodecamp.rocks.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style. /n You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
     UserStories:[
         'User Story #1: My choropleth should have a title with a corresponding id="title".',
@@ -327,13 +209,13 @@ const DB = [{
         'User Story #10: I can mouse over an area and see a tooltip with a corresponding id="tooltip" which displays more information about the area',
         'User Story #11: My tooltip should have a data-education property that corresponds to the data-education of the active area.'
     ],
-    Status: "not started"
+    Status: "in progress"
 },
 {
     id:5,
     certification: "DataVisualization",
     name:"TreeMap",
-    shortDescription: "Objective: Build an app that is functionally similar to this: https://treemap-diagram.freecodecamp.rocks.",
+    shortDescription: "Build an app that is functionally similar to this: https://treemap-diagram.freecodecamp.rocks.",
     Description: "Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style./n You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at https://github.com/d3/d3/blob/master/API.md#axes-d3-axis. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
     UserStories:[
         'User Story #1: My tree map should have a title with a corresponding id="title".',
@@ -349,6 +231,127 @@ const DB = [{
         'User Story #11: My tooltip should have a data-value property that corresponds to the data-value of the active area.'
     ],
     Status: "not started"
+},
+{
+    id:1,
+     certification: "Backend",
+     name:"Timestamp Microservice",
+     shortDescription: "Build a full stack JavaScript app that is functionally similar to this: https://timestamp-microservice.freecodecamp.rocks. Working on this project will involve you writing your code using one of the following methods",
+     Description: "",
+     UserStories:['1. You should provide your own project, not the example URL.',
+ '2. A request to /api/:date? with a valid date should return a JSON object with a unix key that is a Unix timestamp of the input date in milliseconds (as type Number)',
+ '3. A request to /api/:date? with a valid date should return a JSON object with a utc key that is a string of the input date in the format: Thu, 01 Jan 1970 00:00:00 GMT',
+ '4. A request to /api/1451001600000 should return { unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }',
+ '5. Your project can handle dates that can be successfully parsed by new Date(date_string)',
+ '6. If the input date string is invalid, the API returns an object having the structure { error : "Invalid Date" }',
+ '7. An empty date parameter should return the current time in a JSON object with a unix key',
+ '8. An empty date parameter should return the current time in a JSON object with a utc key'],
+     Status: "not started"
+ },
+ {
+    id:2,
+     certification: "Backend",
+     name:"Request Header Parser Microservice",
+     shortDescription: "Build a full stack JavaScript app that is functionally similar to this: https://timestamp-microservice.freecodecamp.rocks. Working on this project will involve you writing your code using one of the following methods",
+     Description: "",
+     UserStories:["1. You should provide your own project, not the example URL.",
+ "2. A request to /api/whoami should return a JSON object with your IP address in the ipaddress key.",
+ "3. A request to /api/whoami should return a JSON object with your preferred language in the language key.",
+ "4. A request to /api/whoami should return a JSON object with your software in the software key."],
+     Status: "not started"
+ },
+ {
+    id:3,
+     certification: "Backend",
+     name:"URL Shortener Microservice",
+     shortDescription: "Build a full stack JavaScript app that is functionally similar to this: https://url-shortener-microservice.freecodecamp.rocks. Working on this project will involve you writing your code using one of the following methods:",
+     Description: "",
+     UserStories:["1. You should provide your own project, not the example URL.",
+ "2. You can POST a URL to /api/shorturl and get a JSON response with original_url and short_url properties. Here's an example: { original_url : 'https://freeCodeCamp.org', short_url : 1}",
+ "3. When you visit /api/shorturl/<short_url>, you will be redirected to the original URL.",
+ "4. If you pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain { error: 'invalid url' }"],
+     Status: "not started"
+ },
+ 
+ {
+    id:4,
+     certification: "Backend",
+     name:"Exercise Tracker",
+     shortDescription: "Build a full stack JavaScript app that is functionally similar to this: https://exercise-tracker.freecodecamp.rocks. Working on this project will involve you writing your code using one of the following methods:",
+     Description: "",
+     UserStories:['1. You should provide your own project, not the example URL.?',
+ '2. You can POST to /api/users with form data username to create a new user.',
+ '3. The returned response from POST /api/users with form data username will be an object with username and _id properties.',
+ '4. You can make a GET request to /api/users to get a list of all users.',
+ '5. The GET request to /api/users returns an array.',
+ "6. Each element in the array returned from GET /api/users is an object literal containing a user's username and _id.",
+ '7. You can POST to /api/users/:_id/exercises with form data description, duration, and optionally date. If no date is supplied, the current date will be used.',
+ '8. The response returned from POST /api/users/:_id/exercises will be the user object with the exercise fields added.',
+ '9. You can make a GET request to /api/users/:_id/logs to retrieve a full exercise log of any user.',
+ "10. A request to a user's log GET /api/users/:_id/logs returns a user object with a count property representing the number of exercises that belong to that user.",
+ '11. A GET request to /api/users/:_id/logs will return the user object with a log array of all the exercises added.',
+ '12. Each item in the log array that is returned from GET /api/users/:_id/logs is an object that should have a description, duration, and date properties.',
+ '13. The description property of any object in the log array that is returned from GET /api/users/:_id/logs should be a string.',
+ '14. The duration property of any object in the log array that is returned from GET /api/users/:_id/logs should be a number.',
+ '15. The date property of any object in the log array that is returned from GET /api/users/:_id/logs should be a string. Use the dateString format of the Date API.',
+ '16. You can add from, to and limit parameters to a GET /api/users/:_id/logs request to retrieve part of the log of any user. from and to are dates in yyyy-mm-dd format. limit is an integer of how many logs to send back.'
+ ],
+     Status: "not started"
+ },
+ {
+    id:5,
+     certification: "Backend",
+     name:"File Metadata Microservice",
+     shortDescription: "Build a full stack JavaScript app that is functionally similar to this: https://file-metadata-microservice.freecodecamp.rocks. Working on this project will involve you writing your code using one of the following methods:",
+     Description: "",
+     UserStories:['1. You should provide your own project, not the example URL.',
+ '2. You can submit a form that includes a file upload.',
+ '3. The form file input field has the name attribute set to upfile.',
+ '4. When you submit a file, you receive the file name, type, and size in bytes within the JSON response.'
+],
+     Status: "not started"
+ },
+{
+    id:1,
+    certification: "",
+    name:"FrontEnd",
+    shortDescription: "Complete the exercises required for front end certification using React",
+    Description: "Must complete 5 exercises for front end certification using tools such as React, Html, CSS and JS",
+    UserStories:["Complete 'Random Quote' Exercise",
+                "Complete 'BuildaMarkdownPreviewer' Exercise",
+                "Complete 'DrumMachine' Exercise",
+                "Complete 'Java Script Calculator' Exercise",
+                "Complete 'Pomodoro' Exercise"
+],
+    Status: "Complete!"
+},
+{
+    id:2,
+    certification: "",
+    name:"DataVisualization",
+    shortDescription: "Complete the exercises required for data visualization certification using D3",
+    Description: "Must complete 5 exercises for front end certification using D3",
+    UserStories:["Complete 'GDP' Exercise",
+                "Complete 'Doping In Professional Bicyle Racing' Exercise",
+                "Complete 'HeatMap' Exercise",
+                "Complete 'ChoroplethMap' Exercise",
+                "Complete 'TreeMap' Exercise"
+],
+    Status: "In progress"
+},
+{
+    id:3,
+    certification: "",
+    name:"Backend",
+    shortDescription: "Complete the exercises required for backend certification using JS",
+    Description: "Must complete 5 exercises for backend certification using JS",
+    UserStories:['Complete "Timestamp Microservice" Exercise',
+        'Complete "Request Header Parser Microservice" Exercise',
+        'Complete "URL Shortener Microservice" Exercise',
+        'Complete "Exercise Tracker" Exercise',
+        'Complete "File Metadata Microservice" Exercise'
+],
+    Status: "In progress"
 }
 ]
 

@@ -1,6 +1,6 @@
 const Default = () => {
     return (<section>
-    "Wrong page brah"
+    "Unvalid URL or non-built section"
     </section>  );
 }
  

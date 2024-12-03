@@ -137,6 +137,22 @@ const DopingInProfessionalBicyleRacing = () => {
       .text("Time in minutes");
 
 
+      svg.append("text")
+      .attr("x", w / 2)
+      .attr("y", 30)
+      .attr("id", "title")  // User Story #1
+      .attr("text-anchor", "middle")
+      .style("font-size", "20px")
+      .text(titleDiv);
+
+      
+      svg.append("text")
+      .attr("x", w / 2)
+      .attr("y", 30)
+      .attr("id", "title")  // User Story #1
+      .attr("text-anchor", "middle")
+      .style("font-size", "20px")
+      .text(subtitleDiv);
     // Tooltip     
       
   }, [data]);

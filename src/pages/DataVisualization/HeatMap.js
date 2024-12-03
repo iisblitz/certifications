@@ -37,24 +37,7 @@ const HeatMap = () => {
       .attr('height', h)
       .style('overflow', "visible");
 
-    const titleDiv = select(divRef.current)
-      .append("div")
-      .attr("x", w / 2)
-      .attr("y", 30)
-      .attr("id", "title")
-      .attr("text-anchor", "middle")
-      .style("font-size", "25px")
-      .text("Monthly Global Land-Surface Temperature");
-
-    const subTitlediv = select(divRef.current)
-      .append("div")
-      .attr("x", w / 2)
-      .attr("y", 50)
-      .attr("id", "description")
-      .attr("text-anchor", "middle")
-      .style("font-size", "15px")
-      .text("1753 - 2015: base temperature 8.66℃");
-
+   
     const setX = [...new Set(xdata)];
     const setY = [...new Set(ydata)];
 
@@ -116,7 +99,7 @@ const HeatMap = () => {
 
 
       
-  }, [xdata, ydata, data, error]);
+  }, [xdata, ydata, data, error, baseT]);
 
   if (error) {
     return <section><div>Error: {error.message}</div></section>;

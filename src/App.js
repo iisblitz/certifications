@@ -1,16 +1,12 @@
 import React from "react"
-import { Link } from "react-router-dom";
-
+import {DB} from "./database"
+import  Cards  from "./components/Cards"
 
 function App() {
-  return (
-    <React.Fragment>
-      <section>
-        <Link to="./FrontEnd">click for frontend projects</Link>
-        <Link to="./DataVisualization">click for data data visualization projects</Link>
-      </section>
-    </React.Fragment>
-  )
-}
+  return ( 
+    <div className="Categories">
+    {DB.filter(e=>e.certification === '').map(e => <Cards props={e} key={e.id}/>)}
+    </div>
+)}  
 
 export default App;

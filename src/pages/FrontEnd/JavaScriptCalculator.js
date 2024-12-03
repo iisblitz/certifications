@@ -1,4 +1,5 @@
 import {useState} from "react"
+import { evaluate } from 'mathjs';
 import "./JavaScriptCalculator.css"
 
 const JavaScriptCalculator = () => {
@@ -25,9 +26,15 @@ const JavaScriptCalculator = () => {
         setDisplay(0)
     }
 
-    const solve = (e) => {
-        setDisplay(eval(current))
-    }
+    const solve = () => {
+        try {
+            const result = evaluate(current);
+            setDisplay(result);
+        } catch (error) {
+            console.error("Invalid expression", error);
+            setDisplay("Error");
+        }
+    };
 
 
     return ( 
